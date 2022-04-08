@@ -8,10 +8,6 @@ class Artists:
         Artists.artists_seq += 1
     def __repr__(self):
         return f"Name:{self.name} Dob:{self.dob} Genre: {self.genre} ID:{self.artist_id}"
-    def art_print(self):
-        print(f"Name:{self.name} Dob:{self.dob} ID:{self.artist_id}")
-        return self.artist_id
-
 class Songs(Artists):
     def __init__(self, title, artist, length, lyrics):
         super().__init__(artist, None, None)
@@ -35,12 +31,13 @@ artist_dict = {
     artist3.artist_id : artist3,
     artist4.artist_id : artist4,
 }
-#### VALIDATION FUNCTIONS ####
-## See if an artist exists in the list of artists || Make it case insensitive later##
 artist_name1 = getattr(artist1, 'name')
 artist_name2 = getattr(artist2, 'name')
 artist_name3 = getattr(artist3, 'name')
 artist_name4 = getattr(artist4, 'name')
+song_artist1 = getattr(song1, "artist")
+song_artist2 = getattr(song2, "artist")
+song_artist3 = getattr(song3, "artist")
 def valid_artist():
     value = input("Search for an artist")
     if value == artist_name1:
@@ -52,9 +49,11 @@ def valid_artist():
     elif value == artist_name4:
         return True
     return False
+def valid_song():
+    if artist_name1 == song_artist1:
+        return artist_name1
+    elif artist_name2 == song_artist2:
+        return artist_name2
+    return False
+valid_song()
 valid_artist()
-
-
-
-## Check whether a song is created by a particular artist ##
-# def valid_song():
