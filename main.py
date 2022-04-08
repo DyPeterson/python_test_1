@@ -22,7 +22,6 @@ class Songs(Artists):
     def __repr__(self):
         if self.artist == Artists.name:
             return f"{Songs.artist} has a song in our database!"
-# print the artists name and say it exists in the database. Later take user input here.
 artist1 = Artists("Bob Dylan", "5-24-1942", "Folk")
 artist2 = Artists("Paula Abdul", "6-19-1962", "Pop")
 artist3 = Artists("Cab Calloway", "12-25-1907", "Jazz")
@@ -36,18 +35,24 @@ artist_dict = {
     artist3.artist_id : artist3,
     artist4.artist_id : artist4,
 }
-print(artist_dict)
 #### VALIDATION FUNCTIONS ####
-## See if an artist exists in the list of artists ##
-values = artist_dict.values()
-def valid_artist(values):
-    while values != artist_dict.values():
-        
-        # if values == artist_dict.values():
-        #     return True
-        # else:
-        #     return False
-valid_artist(artist1)
+## See if an artist exists in the list of artists || Make it case insensitive later##
+artist_name1 = getattr(artist1, 'name')
+artist_name2 = getattr(artist2, 'name')
+artist_name3 = getattr(artist3, 'name')
+artist_name4 = getattr(artist4, 'name')
+def valid_artist():
+    value = input("Search for an artist")
+    if value == artist_name1:
+        return True
+    elif value == artist_name2:
+        return True
+    elif value == artist_name3:
+        return True
+    elif value == artist_name4:
+        return True
+    return False
+valid_artist()
 
 
 
